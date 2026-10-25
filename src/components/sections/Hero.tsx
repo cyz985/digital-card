@@ -1,4 +1,4 @@
-import { profile } from '@/data'
+import { useSiteData } from '@/context/siteData'
 import { GradientButton } from '@/components/ui/GradientButton'
 import { Icon } from '@/components/ui/Icon'
 import { LazyImage } from '@/components/ui/LazyImage'
@@ -6,6 +6,9 @@ import { Reveal } from '@/components/ui/Reveal'
 
 /** 首屏：身份、简介、行动入口与头像 */
 export function Hero() {
+  const { data } = useSiteData()
+  const profile = data.profile
+
   return (
     <section
       id="home"

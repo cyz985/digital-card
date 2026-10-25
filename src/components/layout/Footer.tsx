@@ -1,4 +1,4 @@
-import { profile } from '@/data'
+import { useSiteData } from '@/context/siteData'
 import { Icon } from '@/components/ui/Icon'
 import { Reveal } from '@/components/ui/Reveal'
 
@@ -6,6 +6,7 @@ const CURRENT_YEAR = new Date().getFullYear()
 
 /** 页脚：版权年份自动计算，提供回到顶部入口 */
 export function Footer() {
+  const profile = useSiteData().data.profile
   const year = CURRENT_YEAR
 
   const handleBackToTop = () => {

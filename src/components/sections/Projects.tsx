@@ -1,10 +1,12 @@
-import { projects } from '@/data'
+import { useSiteData } from '@/context/siteData'
 import { ProjectCard } from '@/components/ui/ProjectCard'
 import { Reveal } from '@/components/ui/Reveal'
 import { SectionTitle } from '@/components/ui/SectionTitle'
 
 /** 课程项目：卡片网格，移动端单列 */
 export function Projects() {
+  const projects = useSiteData().data.projects
+
   return (
     <section
       id="projects"

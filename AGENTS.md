@@ -19,6 +19,8 @@
 | `src/components/layout` | Header、Footer 等页面级固定结构 | 存放业务数据 |
 | `src/components/sections` | 五个内容区块，只做数据装配与布局 | 写复杂可复用逻辑 |
 | `src/components/ui` | 无业务感知的原子组件 | 直接 import `src/data` |
+| `src/components/admin` | 站内编辑面板与各类编辑表单 | 存放对外展示的页面区块 |
+| `src/context` | 全局内容状态，连接 `src/data` 默认值与浏览器本地编辑结果 | 存放 UI 或页面区块 |
 | `src/data` | 全部文案与内容数据（纯数据，无 JSX） | 引入 React / 组件 |
 | `src/hooks` | 可复用行为（滚动、复制、锁定滚动） | 存放 UI |
 | `src/lib` | 动画 variants、工具函数 | 存放业务数据 |
@@ -165,7 +167,9 @@ npm run lint         # oxlint 检查
 
 ## 8. 内容编辑指南（面向站点所有者）
 
-网站所有可展示内容集中在 `src/data`，修改文案不需要改动任何组件：
+页面右下角的「编辑内容」按钮可打开站内编辑面板，支持修改档案、技能、项目与联系方式，并可增删条目。编辑结果保存在当前浏览器的 `localStorage`，刷新后仍然有效；换设备时用面板底部的「导出 JSON / 导入 JSON」迁移，或用「恢复默认」回到 `src/data` 的示例内容。
+
+如需让所有访客都看到新内容，则修改 `src/data` 后重新构建并发布。
 
 | 想修改的内容 | 修改文件 |
 | --- | --- |

@@ -1,10 +1,12 @@
-import { skillGroups } from '@/data'
+import { useSiteData } from '@/context/siteData'
 import { Reveal } from '@/components/ui/Reveal'
 import { SectionTitle } from '@/components/ui/SectionTitle'
 import { SkillGroup } from '@/components/ui/SkillGroup'
 
 /** 专业技能：按类别分组展示，卡片交错入场 */
 export function Skills() {
+  const skillGroups = useSiteData().data.skillGroups
+
   return (
     <section
       id="skills"

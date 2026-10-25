@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import type { MouseEvent } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { navItems, profile } from '@/data'
+import { navItems } from '@/data'
+import { useSiteData } from '@/context/siteData'
 import { Icon } from '@/components/ui/Icon'
 import { useLockBodyScroll } from '@/hooks/useLockBodyScroll'
 import { useScrollSpy } from '@/hooks/useScrollSpy'
@@ -10,6 +11,7 @@ import { cn } from '@/lib/utils'
 
 /** 固定顶部导航：滚动样式切换、当前区块高亮、移动端抽屉菜单 */
 export function Header() {
+  const profile = useSiteData().data.profile
   const [menuOpen, setMenuOpen] = useState(false)
   const menuButtonRef = useRef<HTMLButtonElement>(null)
   const scrolled = useScrolled(8)

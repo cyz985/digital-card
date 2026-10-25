@@ -1,4 +1,4 @@
-import { contact } from '@/data'
+import { useSiteData } from '@/context/siteData'
 import { Icon } from '@/components/ui/Icon'
 import { Reveal } from '@/components/ui/Reveal'
 import { SectionTitle } from '@/components/ui/SectionTitle'
@@ -6,6 +6,7 @@ import { useCopyToClipboard } from '@/hooks/useCopyToClipboard'
 
 /** 联系方式：支持跳转与一键复制 */
 export function Contact() {
+  const contact = useSiteData().data.contact
   const { copied, copy } = useCopyToClipboard()
 
   return (

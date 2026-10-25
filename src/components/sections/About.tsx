@@ -1,9 +1,11 @@
-import { profile } from '@/data'
+import { useSiteData } from '@/context/siteData'
 import { Reveal } from '@/components/ui/Reveal'
 import { SectionTitle } from '@/components/ui/SectionTitle'
 
 /** 关于我：个人介绍、关键信息与量化亮点 */
 export function About() {
+  const profile = useSiteData().data.profile
+
   return (
     <section id="about" className="scroll-mt-24 py-20 md:py-28">
       <div className="mx-auto w-full max-w-6xl px-5 md:px-8">

@@ -1,3 +1,4 @@
+import { EditPanel } from '@/components/admin/EditPanel'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { About } from '@/components/sections/About'
@@ -28,6 +29,7 @@ function App() {
       </main>
 
       <Footer />
+      <EditPanel />
     </>
   )
 }

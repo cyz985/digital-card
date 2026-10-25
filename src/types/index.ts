@@ -111,6 +111,14 @@ export interface ContactContent {
   items: ContactItem[]
 }
 
+/** 站内可编辑的全部内容，持久化在浏览器本地 */
+export interface SiteData {
+  profile: Profile
+  skillGroups: SkillGroup[]
+  projects: Project[]
+  contact: ContactContent
+}
+
 export interface SiteMeta {
   title: string
   description: string
